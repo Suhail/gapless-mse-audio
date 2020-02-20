@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
     <title>Seamless MSE Audio Test</title>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        <p>
-            This page uses MSE to concatenate several encoded fragmented MP4 (AAC) files into a gapless audio stream.<br/>
-            Based on Dale Curtis' excellent article, <a href="https://developers.google.com/web/updates/2015/06/Media-Source-Extensions-for-Audio?hl=en">Media Source Extensions for Audio</a>.<br/>
-            Currently, this plays gaplessly on Chrome, but has audible gaps on <a href="http://caniuse.com/#feat=mediasource">other MSE-enabled browsers</a>.
-        </p><br/><br/><br/>
+      <p>
+        This page uses MSE to concatenate several encoded fragmented MP4 (AAC)
+        files into a gapless audio stream.<br />
+        Based on Dale Curtis' excellent article,
+        <a
+          href="https://developers.google.com/web/updates/2015/06/Media-Source-Extensions-for-Audio?hl=en"
+          >Media Source Extensions for Audio</a
+        >.<br />
+        Currently, this plays gaplessly on Chrome, but has audible gaps on
+        <a href="http://caniuse.com/#feat=mediasource"
+          >other MSE-enabled browsers</a
+        >.
+      </p>
+      <br /><br /><br />
     </div>
     <div>
-        <audio id="audio0" controls=""></audio><br/>
-        <span>Sine wave - 10 segments @ 1 seconds each</span><br/><br/><br/>
+      <audio id="audio0" controls=""></audio><br />
+      <span>Sine wave - 10 segments @ 1 seconds each</span><br /><br /><br />
     </div>
     <div>
-        <audio id="audio1" controls=""></audio><br/>
-        <span>Sintel - 5 segments @ ~6.5 seconds each</span><br/><br/><br/>
+      <audio id="audio1" controls=""></audio><br />
+      <span>Sintel - 5 segments @ ~6.5 seconds each</span><br /><br /><br />
     </div>
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript">
-        'use strict';
+      "use strict";
 
-        // Initialize gapless audios
-        window.initGaplessAudio(
-            document.getElementById('audio0'),
-            [
-                'audio/sine_0.mp4',
-                'audio/sine_1.mp4',
-                'audio/sine_2.mp4',
-                'audio/sine_3.mp4',
-                'audio/sine_4.mp4',
-                'audio/sine_5.mp4',
-                'audio/sine_6.mp4',
-                'audio/sine_7.mp4',
-                'audio/sine_8.mp4',
-                'audio/sine_9.mp4'
-            ]
-        );
+      // Initialize gapless audios
+      window.initGaplessAudio(document.getElementById("audio0"), [
+        "audio/out.1.aac",
+        "audio/out.2.aac"
+        // 'audio/sine_2.mp4',
+        // 'audio/sine_3.mp4',
+        // 'audio/sine_4.mp4',
+        // 'audio/sine_5.mp4',
+        // 'audio/sine_6.mp4',
+        // 'audio/sine_7.mp4',
+        // 'audio/sine_8.mp4',
+        // 'audio/sine_9.mp4'
+      ]);
 
-        window.initGaplessAudio(
-            document.getElementById('audio1'),
-            [
-                'audio/sintel_0.mp4',
-                'audio/sintel_1.mp4',
-                'audio/sintel_2.mp4',
-                'audio/sintel_3.mp4',
-                'audio/sintel_4.mp4'
-            ]
-        );
+      window.initGaplessAudio(document.getElementById("audio1"), [
+        "audio/sintel_0.mp4",
+        "audio/sintel_1.mp4",
+        "audio/sintel_2.mp4",
+        "audio/sintel_3.mp4",
+        "audio/sintel_4.mp4"
+      ]);
     </script>
-</body>
+  </body>
 </html>
